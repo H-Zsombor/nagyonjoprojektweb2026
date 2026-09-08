@@ -1,0 +1,4 @@
+const test  () => {
+    conslole.log("pisi")
+};
+test();
