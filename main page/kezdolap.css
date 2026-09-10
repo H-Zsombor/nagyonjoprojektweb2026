@@ -5,3 +5,33 @@
     background-color: #f0f0f0;
     border-radius: 5px;
 }
+body{
+    background-image: url(./Gemini_Generated_Image_1biw831biw831biw.jpg);
+}
+
+.card:hover {
+    transform: rotate(3deg) scale(1.05); 
+}
+
+
+.card-1 {
+
+    grid-column: auto; 
+}
+
+.card-2 {
+
+    grid-row: auto;
+
+    grid-column: auto;
+}
+.container {
+    display: grid;
+    padding: 20px;
+
+    
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: auto auto;
+    
+    gap: 25px; 
+}
