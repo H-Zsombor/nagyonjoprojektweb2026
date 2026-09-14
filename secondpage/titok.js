@@ -37,11 +37,13 @@ const betolt=()=>{
         </div>
 
         <div class="text-center">
-            <button type="button" id="gomb" class="btn btn-success">
+           <button type="button" id="gomb" class="btn btn-success">
                 Ökolábnyom kiszámítása
             </button>
         </div>
     `;
+    let gomb = document.getElementById("gomb");
+    gomb.addEventListener("click", szamol);
 }
 
 const szamol=()=>{
@@ -51,9 +53,7 @@ const szamol=()=>{
     let hus = Number(document.getElementById("hus").value);
     let ruha = Number(document.getElementById("ruha").value);
     let pont = auto * 0.2 + hus * 4 + ruha * 2 - tomeg;
-    eredmeny.hidden=false;
     eredmenytext.innerHTML=`${nev} ökolábnyom pontszáma: ${Math.round(pont)}`;
+    eredmeny.hidden=false;
 }
 window.addEventListener("load", betolt);
-let gomb = document.getElementById("gomb");
-gomb.addEventListener("click", szamol);
