@@ -3,46 +3,96 @@ let eredmeny=document.getElementById("eredmeny");
 let eredmenytext=document.getElementById("eredmeny-text");
 
 const betolt=()=>{
-    urlap.innerHTML = `
-        <div class="mb-3">
-            <label for="nev" class="form-label">Név:</label>
-            <input type="text" id="nev" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="auto" class="form-label">
-                Hány km-t utazol autóval hetente?
-            </label>
-            <input type="number" id="auto" class="form-control" min="0">
-        </div>
+    let div = document.createElement("div");
+    div.className = "mb-3";
 
-        <div class="mb-3">
-            <label for="tomeg" class="form-label">
-                Hányszor használod a tömegközlekedést hetente?
-            </label>
-            <input type="number" id="tomeg" class="form-control" min="0">
-        </div>
+    let nevlabel = document.createElement("label");
+    nevlabel.className = "form-label";
+    nevlabel.innerHTML = "Név:";
 
-        <div class="mb-3">
-            <label for="hus" class="form-label">
-                Hányszor eszel húst egy héten?
-            </label>
-            <input type="number" id="hus" class="form-control" min="0">
-        </div>
+    let nevinput = document.createElement("input");
+    nevinput.type = "text";
+    nevinput.id = "nev";
+    nevinput.className = "form-control";
 
-        <div class="mb-3">
-            <label for="ruha" class="form-label">
-                Hány új ruhát vásárolsz havonta?
-            </label>
-            <input type="number" id="ruha" class="form-control" min="0">
-        </div>
+    nevdiv.appendChild(nevlabel);
+    nevdiv.appendChild(nevinput);
+    urlap.appendChild(nevdiv);
 
-        <div class="text-center">
+    let autodiv = document.createElement("div");
+    autodiv.className = "mb-3";
+
+    let autolabel = document.createElement("label");
+    autolabel.className = "form-label";
+    autolabel.innerHTML = "Hány km-t utazol autóval hetente?";
+
+    let autoinput = document.createElement("input");
+    autoinput.type = "number";
+    autoinput.id = "auto";
+    autoinput.className = "form-control";
+    autoinput.min = "0";
+
+    autodiv.appendChild(autolabel);
+    autodiv.appendChild(autoinput);
+    urlap.appendChild(autodiv);
+
+
+    let tomegdiv = document.createElement("div");
+    tomegdiv.className = "mb-3";
+
+    let tomeglabel = document.createElement("label");
+    tomeglabel.className = "form-label";
+    tomeglabel.innerHTML = "Hányszor használod a tömegközlekedést hetente?";
+
+    let tomeginput = document.createElement("input");
+    tomeginput.type = "number";
+    tomeginput.id = "tomeg";
+    tomeginput.className = "form-control";
+    tomeginput.min = "0";
+
+    tomegdiv.appendChild(tomeglabel);
+    tomegdiv.appendChild(tomeginput);
+    urlap.appendChild(tomegdiv);
+
+    let husdiv = document.createElement("div");
+    husdiv.className = "mb-3";
+
+    let huslabel = document.createElement("label");
+    huslabel.className = "form-label";
+    huslabel.innerHTML = "Hányszor eszel húst egy héten?";
+
+    let husinput = document.createElement("input");
+    husinput.type = "number";
+    husinput.id = "hus";
+    husinput.className = "form-control";
+    husinput.min = "0";
+
+    husdiv.appendChild(huslabel);
+    husdiv.appendChild(husinput);
+    urlap.appendChild(husdiv);
+
+    let ruhadiv = document.createElement("div");
+    ruhadiv.className = "mb-3";
+
+    let ruhalabel = document.createElement("label");
+    ruhalabel.className = "form-label";
+    ruhalabel.innerHTML = "Hány új ruhát vásárolsz havonta?";
+
+    let ruhainput = document.createElement("input");
+    ruhainput.type = "number";
+    ruhainput.id = "ruha";
+    ruhainput.className = "form-control";
+    ruhainput.min = "0";
+
+    ruhadiv.appendChild(ruhalabel);
+    ruhadiv.appendChild(ruhainput);
+    urlap.appendChild(ruhadiv);
+
+   urlap.innerHTML+=`<div class="text-center">
            <button type="button" id="gomb" class="btn btn-success">
                 Ökolábnyom kiszámítása
-            </button>
-        </div>
-    `;
-    let gomb = document.getElementById("gomb");
+            </button>`
+
     gomb.addEventListener("click", szamol);
 }
 
