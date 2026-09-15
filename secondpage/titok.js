@@ -3,39 +3,24 @@ let eredmeny=document.getElementById("eredmeny");
 let eredmenytext=document.getElementById("eredmeny-text");
 
 const betolt=()=>{
-    let div = document.createElement("div");
-    div.className = "mb-3";
+    
+    let autodiv=document.createElement("div");
+    autodiv.className ="mb-3";
 
-    let nevlabel = document.createElement("label");
-    nevlabel.className = "form-label";
-    nevlabel.innerHTML = "Név:";
+    let autolabel=document.createElement("label");
+    autolabel.className="form-label";
+    autolabel.innerHTML="Hány km-t utazol autóval hetente?";
+    autolabel.htmlFor="auto";
 
-    let nevinput = document.createElement("input");
-    nevinput.type = "text";
-    nevinput.id = "nev";
-    nevinput.className = "form-control";
-
-    nevdiv.appendChild(nevlabel);
-    nevdiv.appendChild(nevinput);
-    urlap.appendChild(nevdiv);
-
-    let autodiv = document.createElement("div");
-    autodiv.className = "mb-3";
-
-    let autolabel = document.createElement("label");
-    autolabel.className = "form-label";
-    autolabel.innerHTML = "Hány km-t utazol autóval hetente?";
-
-    let autoinput = document.createElement("input");
-    autoinput.type = "number";
-    autoinput.id = "auto";
-    autoinput.className = "form-control";
-    autoinput.min = "0";
+    let autoinput=document.createElement("input");
+    autoinput.type="number";
+    autoinput.id="auto"
+    autoinput.className="form-control";
+    autoinput.min="0";
 
     autodiv.appendChild(autolabel);
     autodiv.appendChild(autoinput);
     urlap.appendChild(autodiv);
-
 
     let tomegdiv = document.createElement("div");
     tomegdiv.className = "mb-3";
@@ -43,6 +28,7 @@ const betolt=()=>{
     let tomeglabel = document.createElement("label");
     tomeglabel.className = "form-label";
     tomeglabel.innerHTML = "Hányszor használod a tömegközlekedést hetente?";
+     tomeglabel.htmlFor="tomeg";
 
     let tomeginput = document.createElement("input");
     tomeginput.type = "number";
@@ -54,56 +40,110 @@ const betolt=()=>{
     tomegdiv.appendChild(tomeginput);
     urlap.appendChild(tomegdiv);
 
+    let eteldiv=document.createElement("div");
+    eteldiv.className="mb-3";
+
+    let etellabel = document.createElement("label");
+    etellabel.className = "form-label";
+    etellabel.innerHTML = "Hányszor rendelsz ételt házhoz vagy étteremben egy héten?";
+    etellabel.htmlFor="etel";
+
+    let etelinput = document.createElement("input");
+    etelinput.type = "number";
+    etelinput.id = "etel";
+    etelinput.className = "form-control";
+    etelinput.min ="0";
+
+    eteldiv.appendChild(etellabel);
+    eteldiv.appendChild(etelinput);
+    urlap.appendChild(eteldiv);
+
     let husdiv = document.createElement("div");
     husdiv.className = "mb-3";
 
     let huslabel = document.createElement("label");
     huslabel.className = "form-label";
     huslabel.innerHTML = "Hányszor eszel húst egy héten?";
+    huslabel.htmlFor="hus";
 
     let husinput = document.createElement("input");
     husinput.type = "number";
     husinput.id = "hus";
     husinput.className = "form-control";
-    husinput.min = "0";
+    husinput.min ="0";
 
     husdiv.appendChild(huslabel);
     husdiv.appendChild(husinput);
     urlap.appendChild(husdiv);
 
-    let ruhadiv = document.createElement("div");
-    ruhadiv.className = "mb-3";
+    let ruhadiv=document.createElement("div");
+    ruhadiv.className="mb-3"
 
-    let ruhalabel = document.createElement("label");
-    ruhalabel.className = "form-label";
-    ruhalabel.innerHTML = "Hány új ruhát vásárolsz havonta?";
+    let ruhalabel=document.createElement("label");
+    ruhalabel.className="form-label";
+    ruhalabel.innerHTML="Hány új ruhát vásárolsz havonta?";
+    ruhalabel.htmlFor="ruha";
 
-    let ruhainput = document.createElement("input");
-    ruhainput.type = "number";
-    ruhainput.id = "ruha";
+    let ruhainput=document.createElement("input");
+    ruhainput.type="number";
+    ruhainput.id="ruha";
     ruhainput.className = "form-control";
-    ruhainput.min = "0";
+    ruhainput.min="0";
 
     ruhadiv.appendChild(ruhalabel);
     ruhadiv.appendChild(ruhainput);
     urlap.appendChild(ruhadiv);
+
+        let aramdiv=document.createElement("div");
+    aramdiv.className="mb-3";
+
+    let aramlabel = document.createElement("label");
+    aramlabel.className = "form-label";
+    aramlabel.innerHTML = "Hány órát használsz naponta elektronikai eszközöket?";
+    aramlabel.htmlFor="aram"
+
+    let araminput = document.createElement("input");
+    araminput.type = "number";
+    araminput.id = "aram";
+    araminput.className = "form-control";
+    araminput.min ="0";
+
+    aramdiv.appendChild(aramlabel);
+    aramdiv.appendChild(araminput);
+    urlap.appendChild(aramdiv);
 
    urlap.innerHTML+=`<div class="text-center">
            <button type="button" id="gomb" class="btn btn-success">
                 Ökolábnyom kiszámítása
             </button>`
 
+    let gomb=document.getElementById("gomb");
     gomb.addEventListener("click", szamol);
 }
 
 const szamol=()=>{
-    let nev = document.getElementById("nev").value;
-    let auto = Number(document.getElementById("auto").value);
-    let tomeg = Number(document.getElementById("tomeg").value);
-    let hus = Number(document.getElementById("hus").value);
-    let ruha = Number(document.getElementById("ruha").value);
-    let pont = auto * 0.2 + hus * 4 + ruha * 2 - tomeg;
-    eredmenytext.innerHTML=`${nev} ökolábnyom pontszáma: ${Math.round(pont)}`;
+    let auto=document.getElementById("auto").value;
+    let tomeg=document.getElementById("tomeg").value;
+    let etel=document.getElementById("etel").value;
+    let hus=document.getElementById("hus").value;
+    let ruha=document.getElementById("ruha").value;
+    let aram=document.getElementById("aram").value;
+    let pont=auto*0.15+hus*5+ruha*4+aram*3+etel*3-tomeg*2;
+    if (pont<50) {
+        eredmenytext.innerHTML=`Az ökolábnyom pontszámod: ${Math.round(pont)} - alacsony ökolábnyom`;
+        eredmenytext.className="text-success";
+
+    }
+    else if (pont<100) {
+        eredmenytext.innerHTML=`Az ökolábnyom pontszámod: ${Math.round(pont)} - közepes ökolábnyom`;
+        eredmenytext.className="text-warning";
+
+    }
+    else{
+        eredmenytext.innerHTML=`Az ökolábnyom pontszámod: ${Math.round(pont)} - magas ökolábnyom`;
+        eredmenytext.className="text-danger";
+
+    }
     eredmeny.hidden=false;
 }
 window.addEventListener("load", betolt);
