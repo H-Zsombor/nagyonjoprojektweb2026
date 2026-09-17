@@ -45,11 +45,11 @@ body{
 .container-1{
     display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        grid-template-rows: auto auto;
+        grid-template-rows: ;
 }
 .nagy-kép{
         grid-column: auto; 
-        max-width: 600px;
+        max-width: 6000px;
     margin: 50px auto;
     border-radius: 20px;
     padding: 30px;
