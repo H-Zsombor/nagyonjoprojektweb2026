@@ -74,3 +74,10 @@ body{
 .hat{
     align-content: right;
 }
+.felsocucc{
+        margin: 50px auto;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+}
