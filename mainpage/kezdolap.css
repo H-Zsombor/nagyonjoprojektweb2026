@@ -11,6 +11,7 @@ body{
 
 .card:hover {
     transform: rotate(3deg) scale(1.05); 
+    transition: 2s;
 }
 
 
@@ -40,4 +41,18 @@ body{
     grid-template-rows: auto auto;
     
     gap: 25px; 
+}
+.container-1{
+    display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: auto auto;
+}
+.nagy-kép{
+        grid-column: auto; 
+        max-width: 600px;
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
 }
