@@ -17,6 +17,12 @@ body{
 .card-1 {
 
     grid-column: auto; 
+        max-width: 600px;
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
 }
 
 .card-2 {
