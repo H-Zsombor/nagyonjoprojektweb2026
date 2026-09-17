@@ -85,7 +85,16 @@ body{
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(8px);
 }
+<<<<<<< HEAD
 .anime:hover{
             transform: rotate(3deg) scale(1.05); 
             transition: 2s;
 }
+=======
+
+.slideok{
+    margin: auto;
+    width: 800px;
+    height: 600px;
+}
+>>>>>>> e0efc71a12c7dba35f2c82d500e2bd3f009481de
