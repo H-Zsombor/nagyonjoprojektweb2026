@@ -74,6 +74,21 @@ footer{
     color: black;
 }
 
+.velemeny-kartya {
+    width: 60%;
+    min-height: 160px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+#velemenyCarousel {
+    padding-bottom: 45px;
+}
+
+#velemenygomb{
+ margin-bottom: 20px;
+}
+
 
 @media only screen and (max-width:600px) {
    .fotarolo {
@@ -94,11 +109,18 @@ footer{
         padding: 20px;
     }
 
+    .card{
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
     .slideok {
         width: 100%;
         max-width: 100%;
     }
 
-
+    .velemeny-kartya {
+        width: 85%;
+        min-height: 280px;
 }
-
+}

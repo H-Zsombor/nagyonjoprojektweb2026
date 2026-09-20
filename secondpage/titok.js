@@ -1,6 +1,6 @@
 let urlap=document.getElementById("urlap");
 let eredmeny=document.getElementById("eredmeny");
-let eredmenytext=document.getElementById("eredmeny-text");
+// let eredmeny=document.getElementById("eredmeny-text");
 
 const betolt=()=>{
     
@@ -112,10 +112,13 @@ const betolt=()=>{
     aramdiv.appendChild(araminput);
     urlap.appendChild(aramdiv);
 
-   urlap.innerHTML+=`<div class="text-center">
-           <button type="button" id="gomb" class="btn btn-success">
-                Ökolábnyom kiszámítása
-            </button>`
+ urlap.innerHTML += `
+    <div class="text-center">
+        <button type="button" class="btn btn-success" id="gomb">
+            Ökolábnyom kiszámítása
+        </button>
+    </div>`;
+
 
     let gomb=document.getElementById("gomb");
     gomb.addEventListener("click", szamol);
@@ -129,21 +132,25 @@ const szamol=()=>{
     let ruha=document.getElementById("ruha").value;
     let aram=document.getElementById("aram").value;
     let pont=auto*0.15+hus*5+ruha*4+aram*3+etel*3-tomeg*2;
-    if (pont<50) {
-        eredmenytext.innerHTML=`Az ökolábnyom pontszámod: ${Math.round(pont)} - alacsony ökolábnyom`;
-        eredmenytext.className="text-success";
+    window.name = Math.round(pont);
+    window.location.href = "eredmeny.html";
 
-    }
-    else if (pont<100) {
-        eredmenytext.innerHTML=`Az ökolábnyom pontszámod: ${Math.round(pont)} - közepes ökolábnyom`;
-        eredmenytext.className="text-warning";
-
-    }
-    else{
-        eredmenytext.innerHTML=`Az ökolábnyom pontszámod: ${Math.round(pont)} - magas ökolábnyom`;
-        eredmenytext.className="text-danger";
-
-    }
-    eredmeny.hidden=false;
 }
-window.addEventListener("load", betolt);
+if (eredmeny != null) {
+    let pont = Number(window.name);
+
+    if (pont < 50) {
+        eredmeny.innerHTML = "Az ökolábnyom pontszámod: " + pont + " - alacsony ökolábnyom";
+        eredmeny.className = "text-success";
+    }
+    else if (pont < 100) {
+        eredmeny.innerHTML = "Az ökolábnyom pontszámod: " + pont + " - közepes ökolábnyom";
+        eredmeny.className = "text-warning";
+    }
+    else {
+        eredmeny.innerHTML = "Az ökolábnyom pontszámod: " + pont + " - magas ökolábnyom";
+        eredmeny.className = "text-danger";
+    }
+}
+
+window.addEventListener("load",betolt);

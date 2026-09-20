@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ökölábnyom_BB_HZS</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     <link rel="stylesheet" href="./urlap.css">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
-    <script src="./titok.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="./velemeny.css" rel="stylesheet"  >
+    <script src="./velemeny.js" defer></script>
+    <title>Ökölábnyom_BB_HZS - Vélemény</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <span class="navbar-text">
       <div class="card">
@@ -18,7 +17,7 @@
       </div>
     </span>
     <!-- mobil menü -->
-    <button class="navbar-toggler" type="button"
+ <button class="navbar-toggler" type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarText"
       aria-controls="navbarText"
@@ -38,7 +37,7 @@
         <li class="nav-item">
           <a class="nav-link" href="https://hu.wikipedia.org/wiki/%C3%96kol%C3%B3giai_l%C3%A1bnyom">
             <div class="card">
-              <h5>Információ</h5>
+              <h5>információ</h5>
             </div>
           </a>
         </li>
@@ -56,27 +55,37 @@
             </div>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../mainpage/kezodlap.html#velemenyek">
-            <div class="card">
-              <h5>Vélemények</h5>
-            </div>
-          </a>
-        </li>
       </ul>
     </div>
   </div>
 </nav>
-    <div class="container">
-        <div class="urlap-doboz">
-            <h1 class="text-center mb-4">Ökolábnyom-kalkulátor</h1>
-            <form id="urlap"></form>
+    <div class="velemeny-doboz">
+        <form>
+        <div class="mb-3">
+            <label for="nev" class="form-label">Mi a neved?</label>
+            <input type="text" id="nev" class="form-control">
         </div>
-  </div>
-</div>
+        <div class="mb-3">
+            <label for="csillag" class="form-label">
+                Hány csillaggal értékeled a weboldalunkat? (0-5)
+            </label>
+            <input type="number" id="csillag" class="form-control" min="0" max="5">
+        </div>
+
+        <div class="mb-3">
+            <label for="szoveg" class="form-label">
+                Mi a végső véleményed?
+            </label>
+            <textarea name="szoveg" id="szoveg" class="form-control"></textarea>
+        </div>
+        <div class="text-center">
+        <button type="submit" class="btn btn-success" id="gomb">
+            Küldés
+        </button>
     </div>
-</div>
-<footer class="bg-light text-center text-lg-start">
+    </form>
+    </div>
+    <footer class="bg-light text-center text-lg-start">
   <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
     <p>Elérhetőség: bocskayzsomborkft@gmail.com / +36 30 4794 5674</p>
     <p>© 2027 Copyright: Bocskay Zsombor KFT. :)</p>
