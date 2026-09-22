@@ -98,15 +98,15 @@ const betolt=()=>{
     aramdiv.className="mb-3";
 
     let aramlabel = document.createElement("label");
-    aramlabel.className = "form-label";
-    aramlabel.innerHTML = "Hány órát használsz naponta elektronikai eszközöket?";
+    aramlabel.className="form-label";
+    aramlabel.innerHTML="Hány órát használsz naponta elektronikai eszközöket?";
     aramlabel.htmlFor="aram"
 
-    let araminput = document.createElement("input");
-    araminput.type = "number";
-    araminput.id = "aram";
-    araminput.className = "form-control";
-    araminput.min ="0";
+    let araminput=document.createElement("input");
+    araminput.type="number";
+    araminput.id="aram";
+    araminput.className="form-control";
+    araminput.min="0";
 
     aramdiv.appendChild(aramlabel);
     aramdiv.appendChild(araminput);
@@ -136,20 +136,20 @@ const szamol=()=>{
     window.location.href = "eredmeny.html";
 
 }
-if (eredmeny != null) {
-    let pont = Number(window.name);
+if (eredmeny!=null) {
+    let pont=Number(window.name);
 
     if (pont < 50) {
-        eredmeny.innerHTML = "Az ökolábnyom pontszámod: " + pont + " - alacsony ökolábnyom";
-        eredmeny.className = "text-success";
+        eredmeny.innerHTML=`${pont} - alacsony ökolábnyom`;
+        eredmeny.className="text-success";
     }
     else if (pont < 100) {
-        eredmeny.innerHTML = "Az ökolábnyom pontszámod: " + pont + " - közepes ökolábnyom";
-        eredmeny.className = "text-warning";
+        eredmeny.innerHTML=`${pont} - közepes ökolábnyom`;
+        eredmeny.className="text-warning";
     }
     else {
-        eredmeny.innerHTML = "Az ökolábnyom pontszámod: " + pont + " - magas ökolábnyom";
-        eredmeny.className = "text-danger";
+        eredmeny.innerHTML=`${pont} - magas ökolábnyom`;
+        eredmeny.className="text-danger";
     }
 }
 
