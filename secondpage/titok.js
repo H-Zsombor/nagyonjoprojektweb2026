@@ -131,6 +131,14 @@ const szamol=()=>{
     let hus=document.getElementById("hus").value;
     let ruha=document.getElementById("ruha").value;
     let aram=document.getElementById("aram").value;
+
+    if (auto < 0 || tomeg < 0 || etel < 0 ||
+        hus < 0 || ruha < 0 || aram < 0) {
+
+        alert("Nem adhatsz meg negatív számot!");
+        return;
+    }
+
     let pont=auto*0.15+hus*5+ruha*4+aram*3+etel*3-tomeg*2;
     window.name = Math.round(pont);
     window.location.href = "eredmeny.html";
